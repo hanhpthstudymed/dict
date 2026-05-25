@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>📖 Hannah's Dict</title>
-
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+ 
   <style>
     /* ============ THEME TOKENS ============ */
     :root[data-theme="mono"] {
@@ -38,7 +38,7 @@
       --danger:#ff6b6b;
       --overlay-bg:rgba(10,10,12,.97);
     }
-
+ 
     /* ============ BASE ============ */
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -49,7 +49,7 @@
       transition:background .2s,color .2s;
     }
     .container{max-width:760px;margin:0 auto;padding:24px 20px 80px}
-
+ 
     /* ============ HEADER ============ */
     .header{display:flex;align-items:center;justify-content:space-between;padding:8px 0 20px}
     .title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:26px;letter-spacing:-.02em}
@@ -64,7 +64,7 @@
     .icon-btn:hover{background:var(--btn-bg-hover);border-color:var(--border-strong)}
     .icon-btn:active{transform:scale(.94)}
     .icon-btn.active{background:var(--accent-soft);border-color:var(--accent)}
-
+ 
     /* ============ PANEL ============ */
     .panel{
       display:none;background:var(--panel-bg);border:1px solid var(--border);
@@ -85,7 +85,7 @@
     }
     .link-btn:hover{background:var(--btn-bg);color:var(--text)}
     .link-btn.primary{color:var(--accent);font-weight:600}
-
+ 
     .chip-row{display:flex;flex-wrap:wrap;gap:6px}
     .chip{
       padding:7px 12px;font-size:13px;border:1px solid var(--border);border-radius:999px;
@@ -95,7 +95,7 @@
     .chip.active{background:var(--accent);color:var(--accent-on);border-color:var(--accent)}
     .lang-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
     .lang-options .chip{text-align:center}
-
+ 
     /* ============ INPUT ============ */
     .input-row{display:flex;gap:8px;align-items:center;margin-bottom:14px}
     .input-wrapper{flex:1;position:relative}
@@ -118,7 +118,7 @@
     }
     .translate-btn:hover{opacity:.88}
     .translate-btn:active{transform:scale(.97)}
-
+ 
     /* ============ RESULTS ============ */
     .results{display:flex;flex-direction:column;gap:10px}
     .loading,.empty{
@@ -131,7 +131,7 @@
       border-radius:50%;animation:spin .7s linear infinite;margin-left:8px;vertical-align:middle;
     }
     @keyframes spin{to{transform:rotate(360deg)}}
-
+ 
     .source-card{
       background:var(--accent-soft);border:1px solid var(--border);
       border-radius:14px;padding:16px 18px;margin-bottom:4px;
@@ -147,7 +147,7 @@
       letter-spacing:-.01em;word-break:break-word;
     }
     .source-pron{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--text-muted);margin-top:4px}
-
+ 
     .lang-card{
       background:var(--card-bg);border:1px solid var(--border);border-radius:14px;
       padding:14px 16px;display:flex;align-items:flex-start;gap:12px;
@@ -167,7 +167,7 @@
     .lang-text{font-size:17px;font-weight:500;word-break:break-word;line-height:1.4}
     .lang-pron{margin-top:4px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--text-muted)}
     .lang-actions{display:flex;gap:4px;align-self:center;flex-shrink:0}
-
+ 
     .mini-btn{
       width:30px;height:30px;border:1px solid transparent;background:transparent;
       color:var(--text-muted);border-radius:8px;cursor:pointer;
@@ -178,7 +178,7 @@
     .mini-btn.playing{color:var(--accent);animation:pulse 1s infinite}
     .mini-btn.disabled{opacity:.35;cursor:not-allowed}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
-
+ 
     /* Save bar after result */
     .save-bar{
       display:flex;align-items:center;justify-content:space-between;
@@ -199,7 +199,7 @@
     }
     .save-bar button:hover{opacity:.88}
     .save-bar .right{display:flex;gap:8px;align-items:center}
-
+ 
     /* ============ NOTEBOOK ============ */
     .nb-list{display:flex;flex-direction:column;gap:6px}
     .nb-row{
@@ -219,7 +219,7 @@
       cursor:pointer;transition:all .15s;
     }
     .nb-new-btn:hover{background:var(--card-bg-hover);color:var(--text);border-color:var(--accent)}
-
+ 
     .nb-detail-head{
       display:flex;align-items:center;gap:10px;margin-bottom:12px;
     }
@@ -229,7 +229,7 @@
     }
     .nb-back:hover{background:var(--btn-bg-hover)}
     .nb-detail-name{flex:1;font-weight:600;font-size:16px}
-
+ 
     .nb-card{
       background:var(--card-bg);border:1px solid var(--border);border-radius:10px;
       padding:10px 12px;margin-bottom:6px;
@@ -237,7 +237,7 @@
     }
     .nb-card-word{font-weight:600;font-size:14px}
     .nb-card-trans{font-size:12px;color:var(--text-muted);margin-top:2px}
-
+ 
     /* List item (history) */
     .list-item{
       display:flex;align-items:center;justify-content:space-between;
@@ -253,7 +253,7 @@
     .list-item:hover .list-item-del{opacity:1}
     .list-item-del:hover{color:var(--danger)}
     .empty-list{text-align:center;padding:24px 12px;color:var(--text-faint);font-size:13px;font-style:italic}
-
+ 
     /* ============ FLASH CARD OVERLAY ============ */
     .flash-overlay{
       display:none;position:fixed;inset:0;background:var(--overlay-bg);
@@ -328,7 +328,7 @@
     .flash-btn:hover{background:var(--btn-bg-hover)}
     .flash-btn.primary{background:var(--accent);color:var(--accent-on);border-color:var(--accent)}
     .flash-btn:disabled{opacity:.4;cursor:not-allowed}
-
+ 
     .flash-pre{
       max-width:420px;margin:0 auto;text-align:center;
       display:flex;flex-direction:column;align-items:center;gap:18px;
@@ -339,7 +339,7 @@
       font-size:22px;margin:0;
     }
     .flash-pre p{color:var(--text-muted);font-size:14px;margin:0}
-
+ 
     /* ============ TOAST ============ */
     .toast{
       position:fixed;bottom:24px;left:50%;
@@ -350,7 +350,7 @@
     }
     .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
     .toast.error{background:var(--danger)}
-
+ 
     /* ============ MODAL (prompt) ============ */
     .modal-bg{
       display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
@@ -376,10 +376,10 @@
       cursor:pointer;font-weight:500;
     }
     .modal-actions button.primary{background:var(--accent);color:var(--accent-on);border-color:var(--accent)}
-
+ 
     /* ============ FOOTER ============ */
     .footer{text-align:center;margin-top:32px;font-size:11px;color:var(--text-faint);letter-spacing:.04em}
-
+ 
     /* ============ MOBILE ============ */
     @media (max-width:520px){
       .container{padding:16px 14px 60px}
@@ -394,10 +394,10 @@
     }
   </style>
 </head>
-
+ 
 <body>
   <div class="container">
-
+ 
     <!-- HEADER -->
     <div class="header">
       <div class="title">📖 Hannah's Dict<em data-i18n="subtitle">— smart translator</em></div>
@@ -407,7 +407,7 @@
         <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
       </div>
     </div>
-
+ 
     <!-- HISTORY PANEL -->
     <div class="panel" id="historyPanel">
       <div class="panel-section">
@@ -425,7 +425,7 @@
         <div id="historyList"></div>
       </div>
     </div>
-
+ 
     <!-- NOTEBOOK PANEL -->
     <div class="panel" id="notebookPanel">
       <div id="nbListView">
@@ -446,7 +446,7 @@
         <div id="nbCardList"></div>
       </div>
     </div>
-
+ 
     <!-- SETTINGS PANEL -->
     <div class="panel" id="settingsPanel">
       <div class="panel-section">
@@ -469,7 +469,7 @@
         <div class="lang-options" id="langOptions"></div>
       </div>
     </div>
-
+ 
     <!-- INPUT -->
     <div class="input-row">
       <div class="input-wrapper">
@@ -481,17 +481,17 @@
       </div>
       <button class="translate-btn" id="translateBtn" data-i18n="translate">Translate</button>
     </div>
-
+ 
     <!-- RESULTS -->
     <div class="results" id="results">
       <div class="empty" data-i18n="welcome">Type a word and press Enter to translate</div>
     </div>
-
+ 
     <div class="footer">
       <span data-i18n="poweredBy">Powered by Google Translate · Free Dictionary API · Web Speech API</span>
     </div>
   </div>
-
+ 
   <!-- FLASH CARD OVERLAY -->
   <div class="flash-overlay" id="flashOverlay">
     <div class="flash-head">
@@ -510,7 +510,7 @@
       <button class="flash-btn" id="flashNextBtn" data-i18n="next">Next →</button>
     </div>
   </div>
-
+ 
   <!-- MODAL -->
   <div class="modal-bg" id="modalBg">
     <div class="modal">
@@ -523,9 +523,9 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="toast" id="toast"></div>
-
+ 
   <script>
     /* ============ I18N ============ */
     const I18N = {
@@ -578,7 +578,7 @@
         ttsUnavailable:"Máy chưa cài giọng cho ngôn ngữ này",
       },
     };
-
+ 
     const LANGUAGES = {
       en:      {name:"EN", label:"English",       flag:"🇬🇧", tts:"en-US"},
       vi:      {name:"VN", label:"Tiếng Việt",     flag:"🇻🇳", tts:"vi-VN"},
@@ -587,7 +587,7 @@
       ja:      {name:"JP", label:"日本語",         flag:"🇯🇵", tts:"ja-JP"},
       ko:      {name:"KO", label:"한국어",         flag:"🇰🇷", tts:"ko-KR"},
     };
-
+ 
     /* ============ STATE ============ */
     const LS = {
       ui:"dict.uiLang", theme:"dict.theme", langs:"dict.enabledLangs",
@@ -595,7 +595,7 @@
     };
     const lsGet = (k, fb) => { try { const v = localStorage.getItem(k); return v===null?fb:JSON.parse(v); } catch { return fb; } };
     const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-
+ 
     let uiLang = lsGet(LS.ui, "vi");
     let theme = lsGet(LS.theme, "mono");
     let enabledLangs = lsGet(LS.langs, Object.keys(LANGUAGES));
@@ -603,9 +603,9 @@
     let history = lsGet(LS.history, []);
     // notebooks: [{id, name, ts, cards:[{word, sourceLang, items:[{lang,translated,pron}], ts}]}]
     let notebooks = lsGet(LS.notebooks, []);
-
+ 
     const t = (k) => (I18N[uiLang] && I18N[uiLang][k]) || I18N.en[k] || k;
-
+ 
     /* ============ LANGUAGE DETECTION (giữ nguyên từ trước) ============ */
     const TRADITIONAL_ONLY = new Set(
       "ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩ" +
@@ -644,7 +644,7 @@
       if(HAN_REGEX.test(s)){for(const ch of s)if(TRADITIONAL_ONLY.has(ch))return"zh-TW";return"zh-CN";}
       return"en";
     }
-
+ 
     /* ============ TRANSLATE API ============ */
     async function translateText(text, source, target){
       if(source===target)return text;
@@ -685,7 +685,7 @@
       pronCache.set(key,r);
       return r;
     }
-
+ 
     /* ============ TTS (Web Speech API) ============ */
     let voices = [];
     let voicesLoaded = false;
@@ -697,7 +697,7 @@
       loadVoices();
       window.speechSynthesis.onvoiceschanged = loadVoices;
     }
-
+ 
     function pickVoice(langCode){
       // langCode: "en-US", "zh-CN", ...
       if(!voicesLoaded) loadVoices();
@@ -710,7 +710,7 @@
       v = voices.find(vo => vo.lang.startsWith(prefix));
       return v || null;
     }
-
+ 
     let currentUtterance = null;
     let currentBtn = null;
     function stopAudio(){
@@ -746,7 +746,7 @@
       try { window.speechSynthesis.speak(u); }
       catch(e){ console.error(e); cleanup(); }
     }
-
+ 
     /* ============ DOM ============ */
     const wordInput = $("#wordInput");
     const clearBtn = $("#clearInputBtn");
@@ -772,7 +772,7 @@
       clearTimeout(showToast._t);
       showToast._t = setTimeout(()=>toastEl.classList.remove("show"), 1800);
     }
-
+ 
     /* ============ MODAL (custom prompt/confirm) ============ */
     const modalBg = $("#modalBg");
     function openModal({title, desc, value="", placeholder="", confirmOnly=false}){
@@ -800,10 +800,10 @@
         };
       });
     }
-
+ 
     /* ============ TRANSLATE FLOW ============ */
     let lastResult = null; // {word, sourceLang, items}
-
+ 
     async function translate(word){
       if(!word) return;
       if(word.length > 200){ showToast(t("tooLong"), "error"); return; }
@@ -818,12 +818,12 @@
         const pron = await getPronunciation(translated, lang);
         return {lang, translated, pron};
       }));
-
+ 
       lastResult = {word, sourceLang, sourcePron, items, ts: Date.now()};
       addToHistory(lastResult);
       renderResult(lastResult);
     }
-
+ 
     function renderResult(r){
       const sInfo = LANGUAGES[r.sourceLang] || {flag:"🌐", label:r.sourceLang};
       let html = `
@@ -877,7 +877,7 @@
         </div>
       `;
       resultsEl.innerHTML = html;
-
+ 
       // bind
       $("#saveAddNbBtn").onclick = async () => {
         const name = await openModal({title:t("newNotebook"), desc:t("nbCreateDesc"), placeholder:t("nbName")});
@@ -899,7 +899,7 @@
         };
       }
     }
-
+ 
     resultsEl.addEventListener("click", (e) => {
       const btn = e.target.closest(".mini-btn");
       if(!btn || btn.classList.contains("disabled")) return;
@@ -907,7 +907,7 @@
       if(a==="speak") speak(btn.dataset.text, btn.dataset.lang, btn);
       else if(a==="copy") navigator.clipboard.writeText(btn.dataset.text).then(()=>showToast(t("copied")));
     });
-
+ 
     /* ============ HISTORY ============ */
     function addToHistory(result){
       // Dedupe by word (case-insensitive)
@@ -918,7 +918,7 @@
       lsSet(LS.history, history);
       renderHistory();
     }
-
+ 
     function renderHistory(){
       // Recent 7 days
       const sevenAgo = Date.now() - 7*24*60*60*1000;
@@ -934,7 +934,7 @@
           </div>
         `).join("");
       }
-
+ 
       // All history
       const allEl = $("#historyList");
       if(!history.length){
@@ -948,7 +948,7 @@
         </div>
       `).join("");
     }
-
+ 
     function formatRelTime(ts){
       if(!ts) return "";
       const diff = Date.now() - ts;
@@ -960,7 +960,7 @@
       const days = Math.floor(hrs/24);
       return days + (uiLang==="vi"?" ngày":"d");
     }
-
+ 
     $("#historyList").addEventListener("click", (e) => {
       const del = e.target.closest("[data-del]");
       if(del){
@@ -979,14 +979,14 @@
       const ok = await openModal({title:t("clearAll"), desc:t("confirmClear"), confirmOnly:true});
       if(ok){ history = []; lsSet(LS.history, history); renderHistory(); showToast(t("cleared")); }
     };
-
+ 
     $("#study7DaysBtn").onclick = () => {
       const sevenAgo = Date.now() - 7*24*60*60*1000;
       const recent = history.filter(h => (h.ts||0) >= sevenAgo);
       if(!recent.length){ showToast(t("noCardsToStudy"), "error"); return; }
       startStudy(recent, t("recent7days"));
     };
-
+ 
     /* ============ NOTEBOOKS ============ */
     function uid(){ return "nb_"+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
     function createNotebook(name){
@@ -1004,7 +1004,7 @@
       lsSet(LS.notebooks, notebooks);
       renderNotebookList();
     }
-
+ 
     function renderNotebookList(){
       const el = $("#nbList");
       if(!notebooks.length){
@@ -1024,7 +1024,7 @@
         </div>
       `).join("");
     }
-
+ 
     let currentNbId = null;
     $("#nbList").addEventListener("click", async (e) => {
       const ren = e.target.closest("[data-nb-rename]");
@@ -1048,12 +1048,12 @@
       const row = e.target.closest("[data-nb]");
       if(row){ openNotebookDetail(row.dataset.nb); }
     });
-
+ 
     $("#newNotebookBtn").onclick = async () => {
       const name = await openModal({title:t("newNotebook"), desc:t("nbCreateDesc"), placeholder:t("nbName")});
       if(name) createNotebook(name);
     };
-
+ 
     function openNotebookDetail(id){
       currentNbId = id;
       const nb = notebooks.find(n=>n.id===id); if(!nb) return;
@@ -1118,7 +1118,7 @@
       if(!nb.cards.length){ showToast(t("noCardsToStudy"), "error"); return; }
       startStudy(nb.cards, nb.name);
     };
-
+ 
     /* ============ FLASH CARD STUDY ============ */
     const flashOverlay = $("#flashOverlay");
     const flashBody = $("#flashBody");
@@ -1126,7 +1126,7 @@
     let studyLang = null;    // target language to show on back
     let studyIdx = 0;
     let studyFlipped = false;
-
+ 
     function startStudy(cards, sessionName){
       // 1. Show pre-study screen to pick language
       // Gather available target languages across all cards
@@ -1134,11 +1134,11 @@
       cards.forEach(c => c.items?.forEach(it => { if(it.translated) langSet.add(it.lang); }));
       if(!langSet.size){ showToast(t("noCardsToStudy"), "error"); return; }
       const availableLangs = Array.from(langSet);
-
+ 
       studyCards = cards;
       studyIdx = 0;
       studyFlipped = false;
-
+ 
       flashOverlay.classList.add("open");
       flashBody.innerHTML = `
         <div class="flash-pre">
@@ -1156,7 +1156,7 @@
       $("#flashCounter").textContent = `${cards.length} ${uiLang==="vi"?"thẻ":"cards"}`;
       // Hide controls until language picked
       $$(".flash-controls .flash-btn").forEach(b => b.disabled = true);
-
+ 
       flashBody.querySelectorAll("[data-pick-study]").forEach(chip => {
         chip.onclick = () => {
           studyLang = chip.dataset.pickStudy;
@@ -1169,14 +1169,14 @@
         };
       });
     }
-
+ 
     function renderFlashCard(){
       const card = studyCards[studyIdx]; if(!card) return;
       $("#flashCounter").textContent = `${studyIdx+1}/${studyCards.length}`;
       const sInfo = LANGUAGES[card.sourceLang] || {flag:"🌐", label:card.sourceLang};
       const trans = card.items.find(it => it.lang===studyLang);
       const tInfo = LANGUAGES[studyLang];
-
+ 
       flashBody.innerHTML = `
         <div class="flash-card ${studyFlipped?"flipped":""}" id="flashCard">
           <div class="flash-face front">
@@ -1218,7 +1218,7 @@
         };
       });
     }
-
+ 
     $("#flashPrevBtn").onclick = () => {
       if(!studyCards.length) return;
       studyIdx = (studyIdx - 1 + studyCards.length) % studyCards.length;
@@ -1252,7 +1252,7 @@
       else if(e.key === " " || e.key === "Enter"){ e.preventDefault(); $("#flashFlipBtn").click(); }
       else if(e.key === "Escape") $("#flashCloseBtn").click();
     });
-
+ 
     /* ============ SETTINGS UI ============ */
     function applyTheme(){
       document.documentElement.setAttribute("data-theme", theme);
@@ -1290,7 +1290,7 @@
     $$("[data-ui-lang]").forEach(el => el.onclick = () => {
       uiLang = el.dataset.uiLang; lsSet(LS.ui, uiLang); applyUiLang();
     });
-
+ 
     /* ============ PANEL TOGGLE ============ */
     function togglePanel(name, btn){
       const isOpen = panels[name].classList.contains("open");
@@ -1304,7 +1304,7 @@
     historyBtn.onclick  = () => togglePanel("history", historyBtn);
     notebookBtn.onclick = () => togglePanel("notebook", notebookBtn);
     settingsBtn.onclick = () => togglePanel("settings", settingsBtn);
-
+ 
     /* ============ INPUT EVENTS ============ */
     wordInput.addEventListener("input", () => {
       const has = wordInput.value.length > 0;
@@ -1325,18 +1325,18 @@
       speak(w, detectLanguage(w), speakInputBtn);
     };
     translateBtn.onclick = () => translate(wordInput.value.trim());
-
+ 
     // Hide input action buttons initially
     clearBtn.style.display = "none";
     speakInputBtn.style.display = "none";
-
+ 
     /* ============ INIT ============ */
     applyTheme();
     applyUiLang();
     renderHistory();
     renderNotebookList();
     renderLangOptions();
-
+ 
     // Warm up voices (some browsers load async)
     if(window.speechSynthesis){
       setTimeout(loadVoices, 100);
